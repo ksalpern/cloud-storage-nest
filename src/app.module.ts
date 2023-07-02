@@ -8,7 +8,6 @@ import { UserEntity } from './users/entities/user.entity';
 import { FileEntity } from './files/entities/file.entity';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
-import { AuthclearService } from './authclear/authclear.service';
 
 @Module({
   imports: [
@@ -28,6 +27,6 @@ import { AuthclearService } from './authclear/authclear.service';
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService, AuthclearService],
+  providers: [AppService],
 })
 export class AppModule {}
