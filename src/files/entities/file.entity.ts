@@ -1,9 +1,19 @@
-import { UserEntity } from "src/users/entities/user.entity";
-import { Column, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-
-@Entity('files')
-export class FileEntity {
-
+import {
+    Column,
+    DeleteDateColumn,
+    Entity,
+    ManyToOne,
+    PrimaryGeneratedColumn,
+  } from 'typeorm';
+  import { UserEntity } from '../../users/entities/user.entity';
+  
+  export enum FileType {
+    PHOTOS = 'photos',
+    TRASH = 'trash',
+  }
+  
+  @Entity('files')
+  export class FileEntity {
     @PrimaryGeneratedColumn()
     id: number;
   
@@ -24,4 +34,4 @@ export class FileEntity {
   
     @DeleteDateColumn()
     deletedAt?: Date;
-}
+  }
